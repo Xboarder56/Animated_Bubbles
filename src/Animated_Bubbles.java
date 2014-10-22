@@ -81,7 +81,7 @@ public class Animated_Bubbles extends GraphicsProgram
 		
 		/** sets the bubble 1/2 a random color every time the program is started */
 		bubble.setFillColor(rand);
-		bubble2.setFillColor(rand);
+		bubble2.setFillColor(rand2);
 		
 			while(true)
 			{
