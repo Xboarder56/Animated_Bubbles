@@ -18,8 +18,8 @@ public class Animated_Bubbles extends GraphicsProgram
 	public static final int WINDOW_Y = 400;
 	
 	/**Bubble 1 Variables*/
-	double bubbleSizeIncrease = 0.03;
-	int bubbleSize = 50;
+	double bubbleSizeIncrease = 0.25;
+	int bubbleSize = 35;
 	int bubbleSpeed = -2;
 	int bubbleStartY = 300;
 	
@@ -46,10 +46,7 @@ public class Animated_Bubbles extends GraphicsProgram
 	public void run()
 	{
 		//setBackground(image);
-		bubble();
-		
-		
-		
+		bubble();	
 	}
 	
 	
@@ -104,6 +101,12 @@ public class Animated_Bubbles extends GraphicsProgram
 					/**Sets the default size of the bubble according to the variables*/
 					bubble.setSize(bubbleSize, bubbleSize);
 					
+					/**New Random color when the Bubble hits the top*/
+					Color rand3 = new Color((int) (Math.random( )*255),(int) (Math.random( )*255),(int) (Math.random( )*255),(int) (Math.random( )*255));
+					
+					/** Filles the bubble with the new Random Color from rand3) */
+					bubble.setFillColor(rand3);
+					
 					/**Adds the bubble to the program again and resets the size of the bubble to the default specified in the variables*/
 					add(bubble, (int) (Math.random( )*(WINDOW_X-bubbleSize)), bubbleStartY);
 				}
@@ -139,6 +142,12 @@ public class Animated_Bubbles extends GraphicsProgram
 					
 					/**Sets the default size of the bubble according to the variables*/
 					bubble2.setSize(bubbleSize2, bubbleSize2);
+					
+					/**New Random color when the Bubble hits the top*/
+					Color rand4 = new Color((int) (Math.random( )*255),(int) (Math.random( )*255),(int) (Math.random( )*255),(int) (Math.random( )*255));
+					
+					/** Filles the bubble with the new Random Color from rand3) */
+					bubble2.setFillColor(rand4);
 					
 					/**Adds the bubble to the program again and resets the size of the bubble to the default specified in the variables*/
 					add(bubble2, (int) (Math.random( )*(WINDOW_X-bubbleSize2)), bubbleStartY2);
