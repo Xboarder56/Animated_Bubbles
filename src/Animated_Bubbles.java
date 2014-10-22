@@ -19,6 +19,7 @@ public class Animated_Bubbles extends GraphicsProgram
 	
 	/**Bubble 1 Variables*/
 	double bubbleSizeIncrease = 0.25;
+	double bubbleSpeedIncrease = -0.0;
 	int bubbleSize = 35;
 	int bubbleSpeed = -2;
 	int bubbleStartY = 300;
@@ -78,6 +79,7 @@ public class Animated_Bubbles extends GraphicsProgram
 				
 				/**Bubble 1 Section of the code*/
 				bubbleSizeIncrease+=0.18;
+				bubbleSpeedIncrease+=-0.05;
 				
 				/**Add bubble 2 to the window*/
 				add(bubble);
@@ -86,7 +88,7 @@ public class Animated_Bubbles extends GraphicsProgram
 				bubble.setSize(bubbleSize+bubbleSizeIncrease ,bubbleSize+bubbleSizeIncrease);
 				
 				/**Moves the bubbles up according to the programmed speed*/
-				bubble.move(0, bubbleSpeed);
+				bubble.move(0, bubbleSpeed+bubbleSpeedIncrease);
 				
 				/**Pause the program just enough so the bubble slow goes up the window*/
 				pause(20);
@@ -97,6 +99,7 @@ public class Animated_Bubbles extends GraphicsProgram
 				{
 					/**Changes the bubble size back to zero again to start over growing as it goes up*/
 					bubbleSizeIncrease=0;
+					bubbleSpeedIncrease=0;
 					
 					/**Sets the default size of the bubble according to the variables*/
 					bubble.setSize(bubbleSize, bubbleSize);
