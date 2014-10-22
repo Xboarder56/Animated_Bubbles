@@ -17,6 +17,9 @@ public class Animated_Bubbles extends GraphicsProgram
 	public static final int WINDOW_X = 500;
 	public static final int WINDOW_Y = 400;
 	
+	/**Score Variable for the scoreBoard Label */
+	int score = 0;
+	
 	/**Bubble 1 Variables*/
 	double bubbleSizeIncrease = 0.25;
 	double bubbleSpeedIncrease = -0.0;
@@ -42,6 +45,7 @@ public class Animated_Bubbles extends GraphicsProgram
 		
 		/** Adds the image to the project*/
 		add(image);
+		
 	}
 	
 	/**Run method*/
@@ -56,7 +60,12 @@ public class Animated_Bubbles extends GraphicsProgram
 	/**Bubble 1/2 Method*/
 	public void bubble()
 	{
-	
+		/**Creates a new GLabel named scoreBoard. */
+		GLabel scoreBoard = new GLabel("Score: " + score, WINDOW_X/2-40, 80);
+		
+		/** Adds the new scoreBoard to the project*/
+		add(scoreBoard);
+		
 		/** Creates new bubbles 1/2 with a random x coordinate thats withen the applet window, a set size for each bubble and
 		 *  a set y coordinate for it start at*/
 		GOval bubble = new GOval((int) (Math.random( )*(WINDOW_X-bubbleSize)),bubbleStartY,bubbleSize,bubbleSize);
@@ -94,10 +103,12 @@ public class Animated_Bubbles extends GraphicsProgram
 				/**Pause the program just enough so the bubble slow goes up the window*/
 				pause(20);
 				
-				
 				/**Checks the bubble 1 to see if its hitting the top to start the bubble1 over again*/
 				if(bubble.getY() <= 0)
 				{
+					/**Sets the ScoreBoard Label to the new score when the bubble reaches the tops. */
+					scoreBoard.setLabel("Score: " + score++);
+					
 					/**Changes the bubble size back to zero again to start over growing as it goes up and the default speed*/
 					bubbleSizeIncrease=0;
 					bubbleSpeedIncrease=0.0;
@@ -139,9 +150,13 @@ public class Animated_Bubbles extends GraphicsProgram
 				/**Moves the bubbles up according to the programmed speed*/
 				bubble2.move(0, bubbleSpeed2+bubbleSpeedIncrease2);
 				
+				
 				/**Checks the bubble 2 to see if its hitting the top to start the bubble2 over again*/
 				if(bubble2.getY() <= 0)
 				{
+					/**Sets the ScoreBoard Label to the new score when the bubble reaches the tops. */
+					scoreBoard.setLabel("Score: " + score++);
+					
 					/**Changes the bubble size back to zero again to start over growing as it goes up*/
 					bubbleSizeIncrease2=0;
 					bubbleSpeedIncrease2=0.00;
