@@ -2,7 +2,7 @@
  * Animated_Bubbles.java
  * @author Garrett J. Beasley
  * 10/06/2014
- * Draws a House Picture
+ * Draws a Bubbles that grow and move to the top of the screen
  */
 
 /** Imports for the project */
@@ -119,7 +119,7 @@ public class Animated_Bubbles extends GraphicsProgram
 					/**New Random color when the Bubble hits the top*/
 					Color rand3 = new Color((int) (Math.random( )*255),(int) (Math.random( )*255),(int) (Math.random( )*255),(int) (Math.random( )*255));
 					
-					/** Filles the bubble with the new Random Color from rand3) */
+					/** Fills the bubble with the new Random Color from rand3) */
 					bubble.setFillColor(rand3);
 					
 					/**Adds the bubble to the program again and resets the size of the bubble to the default specified in the variables*/
@@ -167,7 +167,7 @@ public class Animated_Bubbles extends GraphicsProgram
 					/**New Random color when the Bubble hits the top*/
 					Color rand4 = new Color((int) (Math.random( )*255),(int) (Math.random( )*255),(int) (Math.random( )*255),(int) (Math.random( )*255));
 					
-					/** Filles the bubble with the new Random Color from rand3) */
+					/** Fills the bubble with the new Random Color from rand3) */
 					bubble2.setFillColor(rand4);
 					
 					/**Adds the bubble to the program again and resets the size of the bubble to the default specified in the variables*/
