@@ -26,6 +26,7 @@ public class Animated_Bubbles extends GraphicsProgram
 	
 	/**Bubble 2 Variables*/
 	double bubbleSizeIncrease2 = 0.03;
+	double bubbleSpeedIncrease2 = -0.0;
 	int bubbleSize2 = 25;
 	int bubbleSpeed2 = -1;
 	int bubbleStartY2 = 330;
@@ -77,7 +78,7 @@ public class Animated_Bubbles extends GraphicsProgram
 			{
 				
 				
-				/**Bubble 1 Section of the code*/
+				/**Bubble 1 Section of the code (Increases both the size and speed with set values)*/
 				bubbleSizeIncrease+=0.18;
 				bubbleSpeedIncrease+=-0.05;
 				
@@ -97,9 +98,9 @@ public class Animated_Bubbles extends GraphicsProgram
 				/**Checks the bubble 1 to see if its hitting the top to start the bubble1 over again*/
 				if(bubble.getY() <= 0)
 				{
-					/**Changes the bubble size back to zero again to start over growing as it goes up*/
+					/**Changes the bubble size back to zero again to start over growing as it goes up and the default speed*/
 					bubbleSizeIncrease=0;
-					bubbleSpeedIncrease=0;
+					bubbleSpeedIncrease=0.0;
 					
 					/**Sets the default size of the bubble according to the variables*/
 					bubble.setSize(bubbleSize, bubbleSize);
@@ -125,8 +126,9 @@ public class Animated_Bubbles extends GraphicsProgram
 				
 				
 				
-				/**Bubble 2 Section of the code*/
+				/**Bubble 2 Section of the code (Increases both the size and speed with set values)*/
 				bubbleSizeIncrease2+=0.18;
+				bubbleSpeedIncrease2+=-0.05;
 				
 				/**Add bubble 2 to the window*/
 				add(bubble2);
@@ -135,13 +137,14 @@ public class Animated_Bubbles extends GraphicsProgram
 				bubble2.setSize(bubbleSize2+bubbleSizeIncrease2 ,bubbleSize2+bubbleSizeIncrease2);
 				
 				/**Moves the bubbles up according to the programmed speed*/
-				bubble2.move(0, bubbleSpeed2);
+				bubble2.move(0, bubbleSpeed2+bubbleSpeedIncrease2);
 				
 				/**Checks the bubble 2 to see if its hitting the top to start the bubble2 over again*/
 				if(bubble2.getY() <= 0)
 				{
 					/**Changes the bubble size back to zero again to start over growing as it goes up*/
 					bubbleSizeIncrease2=0;
+					bubbleSpeedIncrease2=0.00;
 					
 					/**Sets the default size of the bubble according to the variables*/
 					bubble2.setSize(bubbleSize2, bubbleSize2);
