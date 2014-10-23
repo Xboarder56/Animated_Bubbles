@@ -21,16 +21,16 @@ public class Animated_Bubbles extends GraphicsProgram
 	int score = 0;
 	
 	/**Bubble 1 Variables*/
-	public static final int bubbleStartY = 300;
-	public static final int bubbleSize = 35;
-	public static final int bubbleSpeed = -2;
+	public static final int BUBBLE_START_Y = 300;
+	public static final int BUBBLE_SIZE= 35;
+	public static final int BUBBLE_SPEED = -2;
 	double bubbleSizeIncrease = 0.25;
 	double bubbleSpeedIncrease = -0.0;
 	
 	/**Bubble 2 Variables*/
-	public static final int bubbleStartY2 = 330;
-	public static final int bubbleSize2 = 25;
-	public static final int bubbleSpeed2 = -1;
+	public static final int BUBBLE_START_Y_2 = 330;
+	public static final int BUBBLE_SIZE_2 = 25;
+	public static final int BUBBLE_SPEED_2 = -1;
 	double bubbleSizeIncrease2 = 0.03;
 	double bubbleSpeedIncrease2 = -0.0;
 	
@@ -68,8 +68,8 @@ public class Animated_Bubbles extends GraphicsProgram
 		
 		/** Creates new bubbles 1/2 with a random x coordinate thats withen the applet window, a set size for each bubble and
 		 *  a set y coordinate for it start at*/
-		GOval bubble = new GOval((int) (Math.random( )*(WINDOW_X-bubbleSize)),bubbleStartY,bubbleSize,bubbleSize);
-		GOval bubble2 = new GOval((int) (Math.random( )*(WINDOW_X-bubbleSize)),bubbleStartY,bubbleSize,bubbleSize);
+		GOval bubble = new GOval((int) (Math.random( )*(WINDOW_X-BUBBLE_SIZE)),BUBBLE_START_Y,BUBBLE_SIZE,BUBBLE_SIZE);
+		GOval bubble2 = new GOval((int) (Math.random( )*(WINDOW_X-BUBBLE_SIZE)),BUBBLE_START_Y,BUBBLE_SIZE,BUBBLE_SIZE);
 		
 		/**Creates a new Variable for colors called rand/rand2 and uses the math.random *255 colors to randomize the color of the bubbles*/
 		Color rand = new Color((int) (Math.random( )*255),(int) (Math.random( )*255),(int) (Math.random( )*255),(int) (Math.random( )*255));
@@ -95,10 +95,10 @@ public class Animated_Bubbles extends GraphicsProgram
 				add(bubble);
 				
 				/**Sets the size of the bubble1 according to the variables at the start of the program, ALlows the bubbles to slow increase in size*/
-				bubble.setSize(bubbleSize+bubbleSizeIncrease ,bubbleSize+bubbleSizeIncrease);
+				bubble.setSize(BUBBLE_SIZE+bubbleSizeIncrease ,BUBBLE_SIZE+bubbleSizeIncrease);
 				
 				/**Moves the bubbles up according to the programmed speed*/
-				bubble.move(0, bubbleSpeed+bubbleSpeedIncrease);
+				bubble.move(0, BUBBLE_SPEED+bubbleSpeedIncrease);
 				
 				/**Pause the program just enough so the bubble slow goes up the window*/
 				pause(20);
@@ -115,7 +115,7 @@ public class Animated_Bubbles extends GraphicsProgram
 					bubbleSpeedIncrease=0.0;
 					
 					/**Sets the default size of the bubble according to the variables*/
-					bubble.setSize(bubbleSize, bubbleSize);
+					bubble.setSize(BUBBLE_SIZE, BUBBLE_SIZE);
 					
 					/**New Random color when the Bubble hits the top*/
 					Color rand3 = new Color((int) (Math.random( )*255),(int) (Math.random( )*255),(int) (Math.random( )*255),(int) (Math.random( )*255));
@@ -124,7 +124,7 @@ public class Animated_Bubbles extends GraphicsProgram
 					bubble.setFillColor(rand3);
 					
 					/**Adds the bubble to the program again and resets the size of the bubble to the default specified in the variables*/
-					add(bubble, (int) (Math.random( )*(WINDOW_X-bubbleSize)), bubbleStartY);
+					add(bubble, (int) (Math.random( )*(WINDOW_X-BUBBLE_SIZE)), BUBBLE_START_Y);
 				}
 				
 				
@@ -146,10 +146,10 @@ public class Animated_Bubbles extends GraphicsProgram
 				add(bubble2);
 				
 				/**Sets the size of the bubble2 according to the variables at the start of the program, ALlows the bubbles to slow increase in size*/
-				bubble2.setSize(bubbleSize2+bubbleSizeIncrease2 ,bubbleSize2+bubbleSizeIncrease2);
+				bubble2.setSize(BUBBLE_SIZE_2+bubbleSizeIncrease2 ,BUBBLE_SIZE_2+bubbleSizeIncrease2);
 				
 				/**Moves the bubbles up according to the programmed speed*/
-				bubble2.move(0, bubbleSpeed2+bubbleSpeedIncrease2);
+				bubble2.move(0, BUBBLE_SPEED_2+bubbleSpeedIncrease2);
 				
 				
 				/**Checks the bubble 2 to see if its hitting the top to start the bubble2 over again*/
@@ -163,7 +163,7 @@ public class Animated_Bubbles extends GraphicsProgram
 					bubbleSpeedIncrease2=0.00;
 					
 					/**Sets the default size of the bubble according to the variables*/
-					bubble2.setSize(bubbleSize2, bubbleSize2);
+					bubble2.setSize(BUBBLE_SIZE_2, BUBBLE_SIZE_2);
 					
 					/**New Random color when the Bubble hits the top*/
 					Color rand4 = new Color((int) (Math.random( )*255),(int) (Math.random( )*255),(int) (Math.random( )*255),(int) (Math.random( )*255));
@@ -172,7 +172,7 @@ public class Animated_Bubbles extends GraphicsProgram
 					bubble2.setFillColor(rand4);
 					
 					/**Adds the bubble to the program again and resets the size of the bubble to the default specified in the variables*/
-					add(bubble2, (int) (Math.random( )*(WINDOW_X-bubbleSize2)), bubbleStartY2);
+					add(bubble2, (int) (Math.random( )*(WINDOW_X-BUBBLE_SIZE_2)), BUBBLE_START_Y_2);
 				}
 				
 				/**Checks Bubble 2 to see if its hitting the edge of the applet*/
