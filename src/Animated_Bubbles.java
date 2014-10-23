@@ -21,18 +21,18 @@ public class Animated_Bubbles extends GraphicsProgram
 	int score = 0;
 	
 	/**Bubble 1 Variables*/
+	public static final int bubbleStartY = 300;
+	public static final int bubbleSize = 35;
+	public static final int bubbleSpeed = -2;
 	double bubbleSizeIncrease = 0.25;
 	double bubbleSpeedIncrease = -0.0;
-	int bubbleSize = 35;
-	int bubbleSpeed = -2;
-	int bubbleStartY = 300;
 	
 	/**Bubble 2 Variables*/
+	public static final int bubbleStartY2 = 330;
+	public static final int bubbleSize2 = 25;
+	public static final int bubbleSpeed2 = -1;
 	double bubbleSizeIncrease2 = 0.03;
 	double bubbleSpeedIncrease2 = -0.0;
-	int bubbleSize2 = 25;
-	int bubbleSpeed2 = -1;
-	int bubbleStartY2 = 330;
 	
 	/**Init Method*/
 	public void init()
@@ -91,10 +91,10 @@ public class Animated_Bubbles extends GraphicsProgram
 				bubbleSizeIncrease+=0.18;
 				bubbleSpeedIncrease+=-0.05;
 				
-				/**Add bubble 2 to the window*/
+				/**Add bubble 1 to the window*/
 				add(bubble);
 				
-				/**Sets the size of the bubble2 according to the variables at the start of the program, ALlows the bubbles to slow increase in size*/
+				/**Sets the size of the bubble1 according to the variables at the start of the program, ALlows the bubbles to slow increase in size*/
 				bubble.setSize(bubbleSize+bubbleSizeIncrease ,bubbleSize+bubbleSizeIncrease);
 				
 				/**Moves the bubbles up according to the programmed speed*/
@@ -106,8 +106,9 @@ public class Animated_Bubbles extends GraphicsProgram
 				/**Checks the bubble 1 to see if its hitting the top to start the bubble1 over again*/
 				if(bubble.getY() <= 0)
 				{
+					
 					/**Sets the ScoreBoard Label to the new score when the bubble reaches the tops. */
-					scoreBoard.setLabel("Score: " + score++);
+					scoreBoard.setLabel("Score: " + ++score);
 					
 					/**Changes the bubble size back to zero again to start over growing as it goes up and the default speed*/
 					bubbleSizeIncrease=0;
@@ -131,7 +132,7 @@ public class Animated_Bubbles extends GraphicsProgram
 				if(bubble.getX() + bubble.getHeight() >= WINDOW_X)
 				 {
 					/**Moves the bubble2 over from the edge of the applet to stop it from going outside the window*/
-					 bubble.move(-3, 0);
+					 bubble.move(-1, 0);
 				 }
 				
 				
@@ -155,7 +156,7 @@ public class Animated_Bubbles extends GraphicsProgram
 				if(bubble2.getY() <= 0)
 				{
 					/**Sets the ScoreBoard Label to the new score when the bubble reaches the tops. */
-					scoreBoard.setLabel("Score: " + score++);
+					scoreBoard.setLabel("Score: " + ++score);
 					
 					/**Changes the bubble size back to zero again to start over growing as it goes up*/
 					bubbleSizeIncrease2=0;
@@ -178,7 +179,7 @@ public class Animated_Bubbles extends GraphicsProgram
 				if(bubble2.getX() + bubble2.getHeight() >= WINDOW_X)
 				 {
 					/**Moves the bubble2 over from the edge of the applet to stop it from going outside the window*/
-					 bubble2.move(-3, 0);
+					 bubble2.move(-1, 0);
 				 }
 				
 			}
